@@ -1,2 +1,2 @@
 # X
-A static front-end clone of X (Twitter), built using modern HTML, CSS, and JavaScript to replicate the platform’s layout and styling. Emphasizes component structure and UI accuracy.
+A front-end clone of X (Twitter), built using HTML5, CSS3, and JavaScript to replicate the platform’s layout, interface and styling. Emphasizes component structure and UI accuracy.
