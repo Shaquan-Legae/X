@@ -208,21 +208,19 @@ main {
 textarea {
     width: 100%;
     background: transparent;
-    color: #fff;
     border: none;
     resize: none;
     min-height: 70px;
     font-family: inherit;
     font-size: 20px;
     outline: none;
-    box-sizing: border-box;
-    padding: 8px 0 0;
     line-height: 1.5;
     caret-color: #1d9bf0;
+    color: white;
 }
 
 textarea::placeholder {
-    color: #536471;
+    color: #89a2b6;
 }
 
 .composer-footer {
@@ -1073,48 +1071,71 @@ main::-webkit-scrollbar {
     min-height: 140px;
 }
 
+#hamburger-btn {
+    display: none;
+    position: absolute;   
+    left: 8px;            
+    top: 50%;             
+    transform: translateY(-50%); 
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 1000;        
+    color: #71767b;
+}
 
-/* ───────────── Responsive ───────────── */
-@media (max-width: 1200px) {
-    .body {
-        max-width: 100%;
+/* iPad & smaller screen */
+@media (max-width: 1024px) {
+    body {
+        overflow-x: hidden; 
     }
 
-    aside {
-        width: 88px;
-        align-items: center;
+    #hamburger-btn {
+        display: inline-block;
     }
 
-    .aside-btn {
-        padding: 10px;
-    }
-
-    .aside-btn span,
-    .aside-profile-name,
-    #prof-more {
-        display: none;
-    }
-
-    .post {
-        width: 52px;
-        height: 52px;
-        border-radius: 50%;
-        font-size: 0;
+    .home-tabs {
         position: relative;
     }
 
-    .post::before {
-        content: "+";
-        font-size: 30px;
+    .right-aside {
+        display: none; /* hide right aside */
+    }
+
+    .quick-actions {
+        display: none; /* hide FAB buttons */
     }
 
     main {
-        width: calc(100vw - 88px - 340px);
-        min-width: 420px;
+        width: 100%; /* full width main */
+        border-right: none;
+        flex: 1 1 auto; /* ensure it fills remaining space */
+    }
+
+    /* Left aside offscreen initially for hamburger */
+    aside {
+        width: 260px;
+        position: fixed;
+        top: 0;
+        left: -260px;
+        height: 100vh;
+        z-index: 100;
+        transition: left 0.3s ease;
+        background: #000;
+    }
+
+    aside.active {
+        left: 0; /* slide in when active */
     }
 }
 
-@media (max-width: 1024px) {
+/* Mobile phones (portrait) */
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+
     .right-aside {
         display: none;
     }
@@ -1124,39 +1145,23 @@ main::-webkit-scrollbar {
     }
 
     main {
-        width: calc(100vw - 88px);
-        min-width: 0;
-    }
-}
-
-@media (max-width: 680px) {
-    aside {
-        width: 72px;
-        padding: 12px 10px;
-    }
-
-    main {
-        width: calc(100vw - 72px);
+        width: 100%;
         border-right: none;
+        flex: 1 1 auto;
     }
 
-    .tweet-composer {
-        padding: 12px;
+    aside {
+        width: 260px;
+        position: fixed;
+        top: 0;
+        left: -260px;
+        height: 100vh;
+        z-index: 100;
+        transition: left 0.3s ease;
+        background: #000;
     }
 
-    textarea {
-        font-size: 18px;
-    }
-
-    .home-tab {
-        font-size: 17px;
-    }
-
-    .tweet-text {
-        font-size: 15px;
-    }
-
-    .tweet-follow-btn {
-        display: none;
+    aside.active {
+        left: 0;
     }
 }

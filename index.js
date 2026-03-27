@@ -269,6 +269,20 @@ feedContainer.addEventListener("click", (event) => {
   if (action === "like") toggleLike(id);
 });
 
+const hamburgerBtn = document.getElementById('hamburger-btn');
+const leftAside = document.querySelector('aside');
+
+hamburgerBtn.addEventListener('click', () => {
+    leftAside.classList.toggle('active');
+});
+
+// Close aside if clicking outside
+document.addEventListener('click', (e) => {
+    if (!leftAside.contains(e.target) && !hamburgerBtn.contains(e.target)) {
+        leftAside.classList.remove('active');
+    }
+});
+
 loadFromStorage();
 renderPosts();
 updateComposerState(tweetInput, postBtn, charCount);

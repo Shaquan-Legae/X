@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="index.css">
 </head>
 
+
 <body>
     <div class="body" role="application" aria-label="X timeline clone">
         <aside aria-label="Primary navigation">
@@ -36,6 +37,11 @@
 
                 <!-- Sticky header -->
                 <header class="sticky-header">
+                    <!-- Hamburger button for mobile/tablet -->
+                    <button id="hamburger-btn" class="hamburger-btn" aria-label="Open menu">
+                        &#9776;
+                    </button>
+
                     <div class="home-tabs">
                         <button class="home-tab active-tab" type="button">For you</button>
                         <button class="home-tab" type="button">Following</button>
@@ -268,7 +274,7 @@
                         <!-- Tweet text -->
                         <div class="tweet-text">
                             <p>Married life in a video 😂</p>
-                            <video controls class="tweet-video" autoplay="true">
+                            <video controls class="tweet-video" autoplay muted>
                                 <source src="posts/wanderer.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
@@ -325,12 +331,9 @@
                             manager</strong></p>
                     <span class="news-details">
                         <div class="avatar-stack">
-                            <img src="posts/user_1.jpg"
-                                alt="User 1" class="avatar">
-                            <img src="posts/user_2.jpg"
-                                alt="User 2" class="avatar">
-                            <img src="posts/user_3.jpg"
-                                alt="User 3" class="avatar">
+                            <img src="posts/user_1.jpg" alt="User 1" class="avatar">
+                            <img src="posts/user_2.jpg" alt="User 2" class="avatar">
+                            <img src="posts/user_3.jpg" alt="User 3" class="avatar">
                         </div>
                         <p>2 days ago · Sports · 20.6K posts</p>
                     </span>
@@ -340,12 +343,9 @@
                     <p><strong>Zakes Bantwini and Black Coffee Reunite Onstage in Durban</strong></p>
                     <span class="news-details">
                         <div class="avatar-stack">
-                            <img src="posts/user_1.jpg"
-                                alt="User 1" class="avatar">
-                            <img src="posts/user_2.jpg"
-                                alt="User 2" class="avatar">
-                            <img src="posts/user_3.jpg"
-                                alt="User 3" class="avatar">
+                            <img src="posts/user_1.jpg" alt="User 1" class="avatar">
+                            <img src="posts/user_2.jpg" alt="User 2" class="avatar">
+                            <img src="posts/user_3.jpg" alt="User 3" class="avatar">
                         </div>
                         <p>9 hours ago · News · 9K posts</p>
                     </span>
@@ -354,12 +354,9 @@
                     <p><strong>Iran Mocks U.S. Military with Hollywood-Style Propaganda Videos</strong></p>
                     <span class="news-details">
                         <div class="avatar-stack">
-                            <img src="posts/user_1.jpg"
-                                alt="User 1" class="avatar">
-                            <img src="posts/user_2.jpg"
-                                alt="User 2" class="avatar">
-                            <img src="posts/user_3.jpg"
-                                alt="User 3" class="avatar">
+                            <img src="posts/user_1.jpg" alt="User 1" class="avatar">
+                            <img src="posts/user_2.jpg" alt="User 2" class="avatar">
+                            <img src="posts/user_3.jpg" alt="User 3" class="avatar">
                         </div>
                         <p>4 hours ago · Entertainment · 368 posts</p>
                     </span>
@@ -398,8 +395,7 @@
                     <h3>Who to follow</h3>
                 </div>
                 <div class="follow-row">
-                    <img src="posts/user_2.jpg" alt="Low Quality Memes" width="44" height="44"
-                        class="follow-avatar">
+                    <img src="posts/user_2.jpg" alt="Low Quality Memes" width="44" height="44" class="follow-avatar">
                     <div class="follow-meta">
                         <p><strong>Low Quality Memes</strong></p>
                         <p>@ipostlqmemes</p>
@@ -407,8 +403,7 @@
                     <button class="follow-btn">Follow</button>
                 </div>
                 <div class="follow-row">
-                    <img src="posts/rassie.jpg" alt="Rassie Erasmus" width="44" height="44"
-                        class="follow-avatar">
+                    <img src="posts/rassie.jpg" alt="Rassie Erasmus" width="44" height="44" class="follow-avatar">
                     <div class="follow-meta">
                         <p><strong>Rassie Erasmus</strong> <span class="verified">●</span></p>
                         <p>@RassieRugby</p>
