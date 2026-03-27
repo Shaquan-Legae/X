@@ -28,7 +28,7 @@ aside {
     width: 260px;
     border-right: 1px solid #2f3336;
     position: sticky;
-    top: 0;
+    margin-top: 7px;
     box-sizing: border-box;
 }
 
@@ -791,7 +791,7 @@ main::-webkit-scrollbar {
 .news-line {
     display: block;
     border-radius: 10px;
-    padding: 8px 6px;
+    padding: 0px 6px;
     margin: 0 -6px;
     transition: background-color 0.2s ease;
     cursor: pointer;
