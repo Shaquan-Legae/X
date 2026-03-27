@@ -16,19 +16,18 @@ A web-based clone of the X (formerly Twitter) timeline interface, built with HTM
 - Accessible design using ARIA labels and semantic HTML elements
 
 ---
-
 ## Project Structure
-├─ index.html # Main HTML file
-├─ index.css # Stylesheet
-├─ index.js # JavaScript
-├─ resources/ # Icons and images
-├─ posts/ Other media
-└─ README.md
 
---- 
+x-clone/
+─ index.html # Main HTML file
+─ index.css # Stylesheet
+─ index.js # JavaScript
+─ resources/ # Icons and images
+─ posts/ # Other media
+─ README.md
 
 ## Usage
 
 1. Clone the repository:  
    ```bash
-   git clone https://github.com/yourusername/x-clone.git
+   git clone https://github.com/Shaquan-Legae/x.git
