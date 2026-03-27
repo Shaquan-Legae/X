@@ -9,20 +9,20 @@
 </head>
 
 <body>
-    <div class="body">
-        <aside>
+    <div class="body" role="application" aria-label="X timeline clone">
+        <aside aria-label="Primary navigation">
             <img src="resources/x.svg" alt="X" width="30px">
-            <a href="#" class="aside-btn"><img src="resources/home.svg">Home</a>
-            <a href="#" class="aside-btn"><img src="resources/explore.svg">Explore</a>
+            <a href="#" class="aside-btn nav-link active" data-view="home"><img src="resources/home.svg">Home</a>
+            <a href="#" class="aside-btn nav-link" data-view="explore"><img src="resources/explore.svg">Explore</a>
             <a href="#" class="aside-btn"><img src="resources/notifications.svg">Notifications</a>
             <a href="#" class="aside-btn"><img src="resources/follow.svg">Follow</a>
             <a href="#" class="aside-btn"><img src="resources/chat.svg">Chat</a>
             <a href="#" class="aside-btn"><img src="resources/grok.svg">Grok</a>
             <a href="#" class="aside-btn"><img src="resources/profile.svg">Profile</a>
             <a href="#" class="aside-btn"><img src="resources/more.svg">More</a>
-            <button class="post">Post</button>
-            <span class="aside-profile">
-                <img src="resources/profile-pic.svg" alt="Profile Picture" width="40px">
+            <button class="post" id="open-modal-btn" aria-label="Open post modal">Post</button>
+            <span class="aside-profile" aria-label="Current profile">
+                <img src="resources/profile.jpg" alt="Profile Picture" id="profile-pic" width="40px">
                 <span class="aside-profile-name">
                     <p>Shaquan Legae</p>
                     <p>@ShaquanLegae</p>
@@ -31,60 +31,164 @@
             </span>
         </aside>
 
-        <main>
+        <main role="main">
+            <section id="home-view" class="view active-view" aria-label="Home timeline">
+                <header class="sticky-header">
+                    <div class="home-tabs">
+                        <button class="home-tab active-tab" type="button">For you</button>
+                        <button class="home-tab" type="button">Following</button>
+                    </div>
+                </header>
 
+                <section class="tweet-composer">
+                    <img src="resources/profile.jpg" alt="Profile Picture" class="composer-avatar" width="46px" height="46px">
+                    <div class="composer-body">
+                        <textarea id="tweet-input" maxlength="280" placeholder="What's happening?" aria-label="Write a post"></textarea>
+                        <div class="composer-footer">
+                            <div class="composer-tools">
+                                <button type="button" class="icon-btn" aria-label="Add image"><img src="resources/post-chat.svg" alt="" width="16" height="16"></button>    
+                                <button type="button" class="icon-btn" aria-label="Grok option"><img src="resources/post-grok.svg" alt="" width="16" height="16"></button>
+                                <button type="button" class="icon-btn" aria-label="Media option"><img src="resources/media.svg" alt="" width="16" height="16"></button>
+                                <button type="button" class="icon-btn" aria-label="GIF option"><img src="resources/gif.svg" alt="" width="16" height="16"></button>
+                                <button type="button" class="icon-btn" aria-label="Poll option"><img src="resources/poll.svg" alt="" width="16" height="16"></button>
+                                <button type="button" class="icon-btn" aria-label="Emoji option"><img src="resources/emoji.svg" alt="" width="16" height="16"></button>
+                                <button type="button" class="icon-btn" aria-label="Schedule option"><img src="resources/schedule.svg" alt="" width="16" height="16"></button>
+                                <button type="button" class="icon-btn" aria-label="Content option"><img src="resources/content.svg" alt="" width="16" height="16"></button>
+                            </div>
+                            <span id="char-count" aria-live="polite">0/280</span>
+                            <button id="post-btn" disabled>Post</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="feed-container" class="feed-container" aria-live="polite"></section>
+            </section>
+
+            <!-- Cursor-Assisted Feature #1: Explore SPA view switch -->
+            <section id="explore-view" class="view" aria-label="Explore view">
+                <header class="sticky-header">
+                    <h2>Explore</h2>
+                </header>
+                <section class="explore-content">
+                    <article class="explore-card">
+                        <p class="explore-meta">Trending in South Africa</p>
+                        <h3>#TechInAfrica</h3>
+                        <p class="explore-posts">42.3K posts</p>
+                    </article>
+                    <article class="explore-card">
+                        <p class="explore-meta">Gaming · Trending</p>
+                        <h3>#GTA6</h3>
+                        <p class="explore-posts">118K posts</p>
+                    </article>
+                    <article class="explore-card">
+                        <p class="explore-meta">Music · Trending</p>
+                        <h3>Black Coffee</h3>
+                        <p class="explore-posts">12.6K posts</p>
+                    </article>
+                    <article class="explore-card">
+                        <p class="explore-meta">Business & Finance</p>
+                        <h3>JSE</h3>    
+                        <p class="explore-posts">8,924 posts</p>
+                    </article>
+                </section>
+            </section>
         </main>
 
-        <section class="right-aside">
-            <span class="search">
+        <section class="right-aside" aria-label="Sidebar and trends">
+            <span class="search" role="search">
                 <img src="resources/search.svg" alt="Search" width="20px" height="20px">
-                <input type="text" placeholder="Search">
+                <input type="text" placeholder="Search" aria-label="Search">
             </span>
             <div class="news">
                 <span class="heading">
-                    <h2>What's happening</h2>
-                    <img src="resources/settings.svg" alt="Settings" width="18px" height="18px">
+                    <h3>Today's news</h3>
+                    <img src="resources/close.svg" alt="Close" width="18px" height="18px">
                 </span>
 
                 <span class="news-line">
-                    <p><strong>Manchester City dunks on Arsenal to win Pep his 5th Carabao Cup as a professional manager</strong></p>
-                    <span class="news-details"><i>Images</i> <p>2 days ago · Sports · 20.6K posts</p></span>
+                    <p><strong>Manchester City dunks on Arsenal to win Pep his 5th Carabao Cup as a professional
+                            manager</strong></p>
+                    <span class="news-details"><i>Images</i>
+                        <p>2 days ago · Sports · 20.6K posts</p>
+                    </span>
                 </span>
 
                 <span class="news-line">
                     <p><strong>Zakes Bantwini and Black Coffee Reunite Onstage in Durban</strong></p>
-                    <span class="news-details"><i>Images</i> <p>9 hours ago · News · 9K posts</p></span>
+                    <span class="news-details"><i>Images</i>
+                        <p>9 hours ago · News · 9K posts</p>
+                    </span>
                 </span>
 
                 <span class="news-line">
                     <p><strong>Zakes Bantwini and Black Coffee Reunite Onstage in Durban</strong></p>
-                    <span class="news-details"><i>Images</i> <p>4 hours ago · Entertainment · 368 posts</p></span>
+                    <span class="news-details"><i>Images</i>
+                        <p>4 hours ago · Entertainment · 368 posts</p>
+                    </span>
                 </span>
             </div>
 
-            <div class="happening">
-                <h2>What's happening</h2>
-                <span class="news-line">
+            <!-- Manual Feature: Trending hashtags panel -->
+            <div class="happening" id="manual-trending-feature">
+                <div class="heading">
+                    <h3>What's happening</h3>
+                </div>
+                <span class="trend-line">
                     <p>Trending in South Africa</p>
                     <p><strong>Paul Mashatile</strong></p>
+                    <img src="resources/prof-more.svg" alt="menu" class="dots">
                 </span>
-                <span class="news-line">
+
+                <span class="trend-line">
                     <p>Trending in South Africa</p>
                     <p><strong>Paul Mashatile</strong></p>
+                    <img src="resources/prof-more.svg" alt="menu" class="dots">
                 </span>
-                <span class="news-line">
+
+                <span class="trend-line">
                     <p>Trending in South Africa</p>
                     <p><strong>Paul Mashatile</strong></p>
+                    <img src="resources/prof-more.svg" alt="menu" class="dots">
                 </span>
-                <span class="news-line">
+
+                <span class="trend-line">
                     <p>Trending in South Africa</p>
                     <p><strong>Paul Mashatile</strong></p>
+                    <img src="resources/prof-more.svg" alt="menu" class="dots">
                 </span>
-                <a href="#">Show more</a> 
+
+                <a href="#" class="show-more">Show more</a>
             </div>
 
             <div class="follow-suggestions">
-
+                <div class="heading">
+                    <h3>Who to follow</h3>
+                </div>
+                <div class="follow-row">
+                    <img src="resources/profile-pic.svg" alt="Low Quality Memes" width="44" height="44" class="follow-avatar">
+                    <div class="follow-meta">
+                        <p><strong>Low Quality Memes</strong></p>
+                        <p>@ipostlqmemes</p>
+                    </div>
+                    <button class="follow-btn">Follow</button>
+                </div>
+                <div class="follow-row">
+                    <img src="resources/profile-pic.svg" alt="Rassie Erasmus" width="44" height="44" class="follow-avatar">
+                    <div class="follow-meta">
+                        <p><strong>Rassie Erasmus</strong> <span class="verified">●</span></p>
+                        <p>@RassieRugby</p>
+                    </div>
+                    <button class="follow-btn">Follow</button>
+                </div>
+                <div class="follow-row">
+                    <img src="resources/profile-pic.svg" alt="Python Hub" width="44" height="44" class="follow-avatar">
+                    <div class="follow-meta">
+                        <p><strong>Python Hub</strong> <span class="verified">●</span></p>
+                        <p>@PythonHub</p>
+                    </div>
+                    <button class="follow-btn">Follow</button>
+                </div>
+                <a href="#" class="show-more">Show more</a>
             </div>
 
             <div class="links">
@@ -101,8 +205,29 @@
                 </span>
             </div>
 
+            <div class="quick-actions">
+                <button aria-label="Compose action">
+                    <img src="resources/grok.svg" alt="Compose" width="28" height="28">
+                </button>
+                <button aria-label="Messages action">
+                    <img src="resources/chat.svg" alt="Messages" width="28" height="28">
+                </button>
+            </div>
         </section>
     </div>
+    <!-- Cursor-Assisted Feature #2: Post modal -->
+    <div id="tweet-modal" class="modal-overlay">
+        <div class="tweet-modal-card" role="dialog" aria-modal="true" aria-label="Create post dialog">
+            <button class="modal-close" id="modal-close-btn" aria-label="Close">x</button>
+            <h3>Create post</h3>
+            <textarea id="modal-tweet-input" maxlength="280" placeholder="What's happening?" aria-label="Write post in modal"></textarea>
+            <div class="composer-footer">
+                <span id="modal-char-count" aria-live="polite">0/280</span>
+                <button id="modal-post-btn" disabled>Post</button>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
 </body>
 
 </html>
