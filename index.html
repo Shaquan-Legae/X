@@ -33,6 +33,8 @@
 
         <main role="main">
             <section id="home-view" class="view active-view" aria-label="Home timeline">
+
+                <!-- Sticky header -->
                 <header class="sticky-header">
                     <div class="home-tabs">
                         <button class="home-tab active-tab" type="button">For you</button>
@@ -40,20 +42,31 @@
                     </div>
                 </header>
 
+                <!-- Tweet composer -->
                 <section class="tweet-composer">
-                    <img src="resources/profile.jpg" alt="Profile Picture" class="composer-avatar" width="46px" height="46px">
+                    <img src="resources/profile.jpg" alt="Profile Picture" class="composer-avatar" width="46px"
+                        height="46px">
                     <div class="composer-body">
-                        <textarea id="tweet-input" maxlength="280" placeholder="What's happening?" aria-label="Write a post"></textarea>
+                        <textarea id="tweet-input" maxlength="280" placeholder="What's happening?"
+                            aria-label="Write a post"></textarea>
                         <div class="composer-footer">
                             <div class="composer-tools">
-                                <button type="button" class="icon-btn" aria-label="Add image"><img src="resources/post-chat.svg" alt="" width="16" height="16"></button>    
-                                <button type="button" class="icon-btn" aria-label="Grok option"><img src="resources/post-grok.svg" alt="" width="16" height="16"></button>
-                                <button type="button" class="icon-btn" aria-label="Media option"><img src="resources/media.svg" alt="" width="16" height="16"></button>
-                                <button type="button" class="icon-btn" aria-label="GIF option"><img src="resources/gif.svg" alt="" width="16" height="16"></button>
-                                <button type="button" class="icon-btn" aria-label="Poll option"><img src="resources/poll.svg" alt="" width="16" height="16"></button>
-                                <button type="button" class="icon-btn" aria-label="Emoji option"><img src="resources/emoji.svg" alt="" width="16" height="16"></button>
-                                <button type="button" class="icon-btn" aria-label="Schedule option"><img src="resources/schedule.svg" alt="" width="16" height="16"></button>
-                                <button type="button" class="icon-btn" aria-label="Content option"><img src="resources/content.svg" alt="" width="16" height="16"></button>
+                                <button type="button" class="icon-btn" aria-label="Add image"><img
+                                        src="resources/post-chat.svg" alt="" width="16" height="16"></button>
+                                <button type="button" class="icon-btn" aria-label="Grok option"><img
+                                        src="resources/post-grok.svg" alt="" width="16" height="16"></button>
+                                <button type="button" class="icon-btn" aria-label="Media option"><img
+                                        src="resources/media.svg" alt="" width="16" height="16"></button>
+                                <button type="button" class="icon-btn" aria-label="GIF option"><img
+                                        src="resources/gif.svg" alt="" width="16" height="16"></button>
+                                <button type="button" class="icon-btn" aria-label="Poll option"><img
+                                        src="resources/poll.svg" alt="" width="16" height="16"></button>
+                                <button type="button" class="icon-btn" aria-label="Emoji option"><img
+                                        src="resources/emoji.svg" alt="" width="16" height="16"></button>
+                                <button type="button" class="icon-btn" aria-label="Schedule option"><img
+                                        src="resources/schedule.svg" alt="" width="16" height="16"></button>
+                                <button type="button" class="icon-btn" aria-label="Content option"><img
+                                        src="resources/content.svg" alt="" width="16" height="16"></button>
                             </div>
                             <span id="char-count" aria-live="polite">0/280</span>
                             <button id="post-btn" disabled>Post</button>
@@ -61,36 +74,238 @@
                     </div>
                 </section>
 
-                <section id="feed-container" class="feed-container" aria-live="polite"></section>
-            </section>
+                <!-- Static tweet cards -->
+                <article class="tweet">
+                    <div class="tweet-avatar">
+                        <img src="resources/elon.jpg" alt="Elon Musk" class="avatar">
+                    </div>
+                    <div class="tweet-content">
+                        <div class="tweet-header">
+                            <span class="tweet-user">
+                                <strong>Elon Musk</strong>
+                                <img src="resources/check.svg" alt="Verified" class="verified-badge">
+                                <span class="tweet-x-badge">𝕏</span>
+                                <span class="handle">@elonmusk</span>
+                                <span class="time">· 23h</span>
+                            </span>
+                            <div class="tweet-header-actions">
+                                <button class="tweet-follow-btn" type="button">Follow</button>
+                                <button class="tweet-more-btn" type="button" aria-label="More options">
+                                    <img src="resources/prof-more.svg" alt="More" class="icon-more">
+                                </button>
+                            </div>
+                        </div>
 
-            <!-- Cursor-Assisted Feature #1: Explore SPA view switch -->
-            <section id="explore-view" class="view" aria-label="Explore view">
-                <header class="sticky-header">
-                    <h2>Explore</h2>
-                </header>
-                <section class="explore-content">
-                    <article class="explore-card">
-                        <p class="explore-meta">Trending in South Africa</p>
-                        <h3>#TechInAfrica</h3>
-                        <p class="explore-posts">42.3K posts</p>
-                    </article>
-                    <article class="explore-card">
-                        <p class="explore-meta">Gaming · Trending</p>
-                        <h3>#GTA6</h3>
-                        <p class="explore-posts">118K posts</p>
-                    </article>
-                    <article class="explore-card">
-                        <p class="explore-meta">Music · Trending</p>
-                        <h3>Black Coffee</h3>
-                        <p class="explore-posts">12.6K posts</p>
-                    </article>
-                    <article class="explore-card">
-                        <p class="explore-meta">Business & Finance</p>
-                        <h3>JSE</h3>    
-                        <p class="explore-posts">8,924 posts</p>
-                    </article>
-                </section>
+                        <!-- Tweet text -->
+                        <div class="tweet-text">
+                            <p>We still don't know what kind of ice cream Reid Hoffman told Epstein he was "bringing for
+                                the girls".</p>
+                            <p>I guess some things will always remain a mystery 🤷‍♂️</p>
+                        </div>
+
+                        <!-- Actions -->
+                        <div class="tweet-actions">
+                            <span class="action-group">
+                                <img src="resources/post-chat.svg" alt="Comment" width="16" height="16">
+                                <span>8K</span>
+                            </span>
+                            <span class="action-group">
+                                <img src="resources/repost.svg" class="icon-retweet" alt="Retweet" width="16"
+                                    height="16">
+                                <span>20K</span>
+                            </span>
+                            <span class="action-group">
+                                <img src="resources/like.svg" alt="Like" width="16" height="16">
+                                <span>198K</span>
+                            </span>
+                            <span class="action-group">
+                                <img src="resources/stats.svg" alt="Views" width="16" height="16">
+                                <span>69M</span>
+                            </span>
+                            <span class="action-group action-right">
+                                <img src="resources/bookmark.svg" alt="Bookmark" width="16" height="16">
+                            </span>
+                            <span class="action-group">
+                                <img src="resources/share.svg" alt="Share" width="16" height="16">
+                            </span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="tweet">
+                    <div class="tweet-avatar">
+                        <img src="posts/chef.jpg" alt="Elon Musk" class="avatar">
+                    </div>
+                    <div class="tweet-content">
+                        <div class="tweet-header">
+                            <span class="tweet-user">
+                                <strong>Chef🧑‍🍳</strong>
+                                <img src="resources/check.svg" alt="Verified" class="verified-badge">
+                                <span class="tweet-x-badge">𝕏</span>
+                                <span class="handle">@chefsevenn</span>
+                                <span class="time">· 2h</span>
+                            </span>
+                            <div class="tweet-header-actions">
+                                <button class="tweet-follow-btn" type="button">Follow</button>
+                                <button class="tweet-more-btn" type="button" aria-label="More options">
+                                    <img src="resources/prof-more.svg" alt="More" class="icon-more">
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Tweet text -->
+                        <div class="tweet-text">
+                            <p>What’s the first word that comes to mind when you see this?</p>
+                            <img src="posts/food.jpg" alt="Food" class="tweet-image">
+                        </div>
+
+                        <!-- Actions -->
+                        <div class="tweet-actions">
+                            <span class="action-group">
+                                <img src="resources/post-chat.svg" alt="Comment" width="16" height="16">
+                                <span>10K</span>
+                            </span>
+                            <span class="action-group">
+                                <img src="resources/repost.svg" class="icon-retweet" alt="Retweet" width="16"
+                                    height="16">
+                                <span>20K</span>
+                            </span>
+                            <span class="action-group">
+                                <img src="resources/like.svg" alt="Like" width="16" height="16">
+                                <span>19K</span>
+                            </span>
+                            <span class="action-group">
+                                <img src="resources/stats.svg" alt="Views" width="16" height="16">
+                                <span>2M</span>
+                            </span>
+                            <span class="action-group action-right">
+                                <img src="resources/bookmark.svg" alt="Bookmark" width="16" height="16">
+                            </span>
+                            <span class="action-group">
+                                <img src="resources/share.svg" alt="Share" width="16" height="16">
+                            </span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="tweet">
+                    <div class="tweet-avatar">
+                        <img src="posts/african.jpg" alt="Elon Musk" class="avatar">
+                    </div>
+                    <div class="tweet-content">
+                        <div class="tweet-header">
+                            <span class="tweet-user">
+                                <strong>African</strong>
+                                <img src="resources/check.svg" alt="Verified" class="verified-badge">
+                                <span class="tweet-x-badge">𝕏</span>
+                                <span class="handle">@ali_naka</span>
+                                <span class="time">· Mar 26</span>
+                            </span>
+                            <div class="tweet-header-actions">
+                                <button class="tweet-follow-btn" type="button">Follow</button>
+                                <button class="tweet-more-btn" type="button" aria-label="More options">
+                                    <img src="resources/prof-more.svg" alt="More" class="icon-more">
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Tweet text -->
+                        <div class="tweet-text">
+                            <p>" We will help Israel"</p>
+                            <img src="posts/israel.jpg" alt="Food" class="tweet-image">
+                        </div>
+
+                        <!-- Actions -->
+                        <div class="tweet-actions">
+                            <span class="action-group">
+                                <img src="resources/post-chat.svg" alt="Comment" width="16" height="16">
+                                <span>264</span>
+                            </span>
+                            <span class="action-group">
+                                <img src="resources/repost.svg" class="icon-retweet" alt="Retweet" width="16"
+                                    height="16">
+                                <span>1.6K</span>
+                            </span>
+                            <span class="action-group">
+                                <img src="resources/like.svg" alt="Like" width="16" height="16">
+                                <span>10K</span>
+                            </span>
+                            <span class="action-group">
+                                <img src="resources/stats.svg" alt="Views" width="16" height="16">
+                                <span>171.8K</span>
+                            </span>
+                            <span class="action-group action-right">
+                                <img src="resources/bookmark.svg" alt="Bookmark" width="16" height="16">
+                            </span>
+                            <span class="action-group">
+                                <img src="resources/share.svg" alt="Share" width="16" height="16">
+                            </span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="tweet">
+                    <div class="tweet-avatar">
+                        <img src="posts/wanderers.jpg" alt="Profile" class="avatar">
+                    </div>
+                    <div class="tweet-content">
+                        <div class="tweet-header">
+                            <span class="tweet-user">
+                                <strong>Earth_Wanderer</strong>
+                                <img src="resources/check.svg" alt="Verified" class="verified-badge">
+                                <span class="tweet-x-badge">𝕏</span>
+                                <span class="handle">@earth_tracker</span>
+                                <span class="time">· Mar 27</span>
+                            </span>
+                            <div class="tweet-header-actions">
+                                <button class="tweet-follow-btn" type="button">Follow</button>
+                                <button class="tweet-more-btn" type="button" aria-label="More options">
+                                    <img src="resources/prof-more.svg" alt="More" class="icon-more">
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Tweet text -->
+                        <div class="tweet-text">
+                            <p>Married life in a video 😂</p>
+                            <video controls class="tweet-video" autoplay="true">
+                                <source src="posts/wanderer.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+
+                        <!-- Actions -->
+                        <div class="tweet-actions">
+                            <span class="action-group">
+                                <img src="resources/post-chat.svg" alt="Comment" width="16" height="16">
+                                <span>137</span>
+                            </span>
+                            <span class="action-group">
+                                <img src="resources/repost.svg" class="icon-retweet" alt="Retweet" width="16"
+                                    height="16">
+                                <span>686</span>
+                            </span>
+                            <span class="action-group">
+                                <img src="resources/like.svg" alt="Like" width="16" height="16">
+                                <span>5.1K</span>
+                            </span>
+                            <span class="action-group">
+                                <img src="resources/stats.svg" alt="Views" width="16" height="16">
+                                <span>1.2M</span>
+                            </span>
+                            <span class="action-group action-right">
+                                <img src="resources/bookmark.svg" alt="Bookmark" width="16" height="16">
+                            </span>
+                            <span class="action-group">
+                                <img src="resources/share.svg" alt="Share" width="16" height="16">
+                            </span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Dynamic feed -->
+                <section id="feed-container" class="feed-container" aria-live="polite"></section>
+
             </section>
         </main>
 
@@ -108,55 +323,73 @@
                 <span class="news-line">
                     <p><strong>Manchester City dunks on Arsenal to win Pep his 5th Carabao Cup as a professional
                             manager</strong></p>
-                    <span class="news-details"><i>Images</i>
+                    <span class="news-details">
+                        <div class="avatar-stack">
+                            <img src="posts/user_1.jpg"
+                                alt="User 1" class="avatar">
+                            <img src="posts/user_2.jpg"
+                                alt="User 2" class="avatar">
+                            <img src="posts/user_3.jpg"
+                                alt="User 3" class="avatar">
+                        </div>
                         <p>2 days ago · Sports · 20.6K posts</p>
                     </span>
                 </span>
 
                 <span class="news-line">
                     <p><strong>Zakes Bantwini and Black Coffee Reunite Onstage in Durban</strong></p>
-                    <span class="news-details"><i>Images</i>
+                    <span class="news-details">
+                        <div class="avatar-stack">
+                            <img src="posts/user_1.jpg"
+                                alt="User 1" class="avatar">
+                            <img src="posts/user_2.jpg"
+                                alt="User 2" class="avatar">
+                            <img src="posts/user_3.jpg"
+                                alt="User 3" class="avatar">
+                        </div>
                         <p>9 hours ago · News · 9K posts</p>
                     </span>
                 </span>
-
                 <span class="news-line">
-                    <p><strong>Zakes Bantwini and Black Coffee Reunite Onstage in Durban</strong></p>
-                    <span class="news-details"><i>Images</i>
+                    <p><strong>Iran Mocks U.S. Military with Hollywood-Style Propaganda Videos</strong></p>
+                    <span class="news-details">
+                        <div class="avatar-stack">
+                            <img src="posts/user_1.jpg"
+                                alt="User 1" class="avatar">
+                            <img src="posts/user_2.jpg"
+                                alt="User 2" class="avatar">
+                            <img src="posts/user_3.jpg"
+                                alt="User 3" class="avatar">
+                        </div>
                         <p>4 hours ago · Entertainment · 368 posts</p>
                     </span>
                 </span>
             </div>
 
-            <!-- Manual Feature: Trending hashtags panel -->
             <div class="happening" id="manual-trending-feature">
                 <div class="heading">
                     <h3>What's happening</h3>
                 </div>
                 <span class="trend-line">
                     <p>Trending in South Africa</p>
-                    <p><strong>Paul Mashatile</strong></p>
+                    <p><strong>THE NOBLE SWEET GULUVA</strong></p>
                     <img src="resources/prof-more.svg" alt="menu" class="dots">
                 </span>
-
                 <span class="trend-line">
                     <p>Trending in South Africa</p>
                     <p><strong>Paul Mashatile</strong></p>
                     <img src="resources/prof-more.svg" alt="menu" class="dots">
                 </span>
-
                 <span class="trend-line">
                     <p>Trending in South Africa</p>
-                    <p><strong>Paul Mashatile</strong></p>
+                    <p><strong>#AkhonamathembaZwaneTheLegend</strong></p>
                     <img src="resources/prof-more.svg" alt="menu" class="dots">
                 </span>
-
                 <span class="trend-line">
                     <p>Trending in South Africa</p>
-                    <p><strong>Paul Mashatile</strong></p>
+                    <p><strong>TRIXIE TAKEOVER</strong></p>
                     <img src="resources/prof-more.svg" alt="menu" class="dots">
                 </span>
-
                 <a href="#" class="show-more">Show more</a>
             </div>
 
@@ -165,7 +398,8 @@
                     <h3>Who to follow</h3>
                 </div>
                 <div class="follow-row">
-                    <img src="resources/profile-pic.svg" alt="Low Quality Memes" width="44" height="44" class="follow-avatar">
+                    <img src="posts/user_2.jpg" alt="Low Quality Memes" width="44" height="44"
+                        class="follow-avatar">
                     <div class="follow-meta">
                         <p><strong>Low Quality Memes</strong></p>
                         <p>@ipostlqmemes</p>
@@ -173,7 +407,8 @@
                     <button class="follow-btn">Follow</button>
                 </div>
                 <div class="follow-row">
-                    <img src="resources/profile-pic.svg" alt="Rassie Erasmus" width="44" height="44" class="follow-avatar">
+                    <img src="posts/rassie.jpg" alt="Rassie Erasmus" width="44" height="44"
+                        class="follow-avatar">
                     <div class="follow-meta">
                         <p><strong>Rassie Erasmus</strong> <span class="verified">●</span></p>
                         <p>@RassieRugby</p>
@@ -181,7 +416,7 @@
                     <button class="follow-btn">Follow</button>
                 </div>
                 <div class="follow-row">
-                    <img src="resources/profile-pic.svg" alt="Python Hub" width="44" height="44" class="follow-avatar">
+                    <img src="posts/python.jpg" alt="Python Hub" width="44" height="44" class="follow-avatar">
                     <div class="follow-meta">
                         <p><strong>Python Hub</strong> <span class="verified">●</span></p>
                         <p>@PythonHub</p>
@@ -210,17 +445,20 @@
                     <img src="resources/grok.svg" alt="Compose" width="28" height="28">
                 </button>
                 <button aria-label="Messages action">
-                    <img src="resources/chat.svg" alt="Messages" width="28" height="28">
+                    <img src="resources/chat-fab.svg" fill="white" alt="Messages" width="28" height="28">
                 </button>
             </div>
+
         </section>
     </div>
-    <!-- Cursor-Assisted Feature #2: Post modal -->
+
+    <!-- Post modal -->
     <div id="tweet-modal" class="modal-overlay">
         <div class="tweet-modal-card" role="dialog" aria-modal="true" aria-label="Create post dialog">
-            <button class="modal-close" id="modal-close-btn" aria-label="Close">x</button>
+            <button class="modal-close" id="modal-close-btn" aria-label="Close">×</button>
             <h3>Create post</h3>
-            <textarea id="modal-tweet-input" maxlength="280" placeholder="What's happening?" aria-label="Write post in modal"></textarea>
+            <textarea id="modal-tweet-input" maxlength="280" placeholder="What's happening?"
+                aria-label="Write post in modal"></textarea>
             <div class="composer-footer">
                 <span id="modal-char-count" aria-live="polite">0/280</span>
                 <button id="modal-post-btn" disabled>Post</button>

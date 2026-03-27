@@ -11,7 +11,7 @@ const seedPosts = [
     id: 1001,
     username: "NO CONTEXT HUMANS",
     handle: "@HumansNoContext",
-    content: "NO CONTEXT HUMANS reposted\nThis is exactly the kind of timeline chaos we signed up for.",
+    content: "This is exactly the kind of timeline chaos we signed up for.",
     timestamp: "Mar 24",
     likes: 19000,
     comments: 51,
@@ -164,7 +164,7 @@ function buildTweetCard(post) {
   const viewsBtn = document.createElement("button");
   viewsBtn.type = "button";
   viewsBtn.setAttribute("aria-label", "Views");
-  viewsBtn.innerHTML = `<img src="resources/repost.svg" alt="" width="16" height="16"><span>${formatCount(post.views || 0)}</span>`;
+  viewsBtn.innerHTML = `<img src="resources/stats.svg" alt="" width="16" height="16"><span>${formatCount(post.views || 0)}</span>`;
 
   actions.append(commentBtn, repostBtn, likeBtn, viewsBtn, deleteBtn);
   contentWrap.append(top, text, actions);
@@ -184,7 +184,7 @@ function renderPosts() {
   if (posts.length === 0) {
     const empty = document.createElement("p");
     empty.className = "empty-state";
-    empty.textContent = "No posts yet. Share your first thought.";
+    empty.textContent = "";
     feedContainer.appendChild(empty);
     return;
   }
